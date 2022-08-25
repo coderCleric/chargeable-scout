@@ -81,11 +81,13 @@ namespace ChargeableScout
                     launchMultiplier += ((maxMultiplier - minMultiplier) / secToCharge) * Time.deltaTime;
                     launchMultiplier = Mathf.Min(launchMultiplier, maxMultiplier);
 
-                    //Update the prompt and make it visible
-                    if (!Locator.GetPromptManager().GetScreenPromptList(PromptPosition.Center).Contains(percentDisplay))
+                    //Add the prompt if it's not already in the list
+                    if (!Locator.GetPromptManager().GetScreenPromptList(PromptPosition.BottomCenter).Contains(percentDisplay))
                     {
-                        Locator.GetPromptManager().AddScreenPrompt(this.percentDisplay, PromptPosition.Center);
+                        Locator.GetPromptManager().AddScreenPrompt(this.percentDisplay, PromptPosition.BottomCenter);
                     }
+
+                    //Update the prompt and make it visible
                     float percentCharge = Mathf.Round((launchMultiplier - minMultiplier) / (maxMultiplier - minMultiplier) * 100);
                     this.percentDisplay.SetText($"Launcher Charge: {percentCharge}%\n ({Mathf.Round(launchMultiplier * 100) / 100})X Force");
                     this.percentDisplay.SetVisibility(true);
