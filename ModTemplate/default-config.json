@@ -1,3 +1,25 @@
 {
-  "enabled": true
+  "enabled": true,
+  "settings": {
+    "minMult": {
+      "type": "number",
+      "value": 1,
+      "title": "Minimum Launch Multiplier"
+    },
+    "maxMult": {
+      "type": "number",
+      "value": 3,
+      "title": "Maximum Launch Multiplier"
+    },
+    "timeToCharge": {
+      "type": "number",
+      "value": 2,
+      "title": "Seconds Until Charged"
+    },
+    "scalingPushback": {
+      "type": "toggle",
+      "value": true,
+      "title":  "Enable Scaling Pushback"
+    }
+  }
 }

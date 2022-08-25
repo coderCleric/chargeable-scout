@@ -24,6 +24,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModTemplate.csproj.user" />
+    <Content Include="ChargeableScout.csproj.user" />
   </ItemGroup>
 </Project>
