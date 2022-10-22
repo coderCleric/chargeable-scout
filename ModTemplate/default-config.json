@@ -19,7 +19,12 @@
     "scalingPushback": {
       "type": "toggle",
       "value": true,
-      "title":  "Enable Scaling Pushback"
+      "title": "Enable Scaling Pushback"
+    },
+    "displayCharge": {
+      "type": "toggle",
+      "value": true,
+      "title": "Display Scout Charge"
     }
   }
 }
