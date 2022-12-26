@@ -77,7 +77,8 @@ namespace ChargeableScout
             if (launcherPrimed)
             {
                 //Save the arrow if we don't have it
-                if(this.arrowTransform == null && (Locator.GetToolModeSwapper()._equippedTool as PlayerProbeLauncher) != null)
+                if (this.arrowTransform == null && (Locator.GetToolModeSwapper()._equippedTool as PlayerProbeLauncher) != null && 
+                    (Locator.GetToolModeSwapper()._equippedTool.transform.Find("Props_HEA_ProbeLauncher") != null))
                 {
                     this.arrowTransform = Locator.GetToolModeSwapper()._equippedTool.transform.Find("Props_HEA_ProbeLauncher").Find("PressureGauge_Arrow");
                 }
@@ -120,7 +121,8 @@ namespace ChargeableScout
 
                     //Rotate the pressure arrow
                     this.fakeAngle = ((MAX_ARROW_ROTATION - 315.3015f) * (percentCharge / 100f)) + 315.3015f;
-                    this.arrowTransform.localEulerAngles = new Vector3(fakeAngle, 90f, 270f);
+                    if(this.arrowTransform != null)
+                        this.arrowTransform.localEulerAngles = new Vector3(fakeAngle, 90f, 270f);
 
                     //Rumble the controller for style
                     RumbleManager.Pulse(0.05f, 0.05f, 0.05f);
